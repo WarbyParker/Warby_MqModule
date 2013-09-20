@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <Warby_Mqmodule>
+            <version>0.1.0</version>
+        </Warby_Mqmodule>
+    </modules>
+    <global>
+        <models>
+            <mqmodule>
+                <class>Warby_Mqmodule_Model</class>
+            </mqmodule>
+        </models>
+        <events>
+            <sales_order_place_after>
+                <observers>
+                    <warby_mqmodule_model_order_confirmation_observer>
+                        <type>singleton</type>
+                        <class>Warby_Mqmodule_Model_Order_Confirmation_Observer</class>
+                        <method>enqueue</method>
+                    </warby_mqmodule_model_order_confirmation_observer>
+                </observers>
+            </sales_order_place_after>
+        </events>
+        <helpers>
+            <mqmodule>
+                <class>Warby_Mqmodule_Helper</class>
+            </mqmodule>
+        </helpers>
+        <resources>
+            <mqmodule_setup>
+                <setup>
+                    <module>Warby_Mqmodule</module>
+                </setup>
+            </mqmodule_setup>
+        </resources>
+    </global>
+    <crontab>
+        <jobs>
+            <mq_listener>
+                <schedule>
+                    <cron_expr>* * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>mqmodule/rabbitlistener::listen</model>
+                </run>
+            </mq_listener>
+            <mq_process_pending>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>mqmodule/rabbitlistener::processPending</model>
+                </run>
+            </mq_process_pending>
+
+        </jobs>
+    </crontab>
+</config>

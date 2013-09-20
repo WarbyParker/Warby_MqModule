@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Warby_Mqmodule>
+			<active>true</active>
+			<codePool>community</codePool>
+		</Warby_Mqmodule>
+	</modules>
+</config>

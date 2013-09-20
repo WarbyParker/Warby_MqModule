@@ -1,0 +1,5 @@
+<?php
+
+class PhpAmqpLib_Exception_AMQPProtocolConnectionException extends PhpAmqpLib_Exception_AMQPProtocolException
+{
+}
