@@ -4,9 +4,9 @@
 
 class PhpAmqpLib_Wire_Constants080
 {
-	public static $AMQP_PROTOCOL_HEADER = "AMQP\x01\x01\x08\x00";
+  public static $AMQP_PROTOCOL_HEADER = "AMQP\x01\x01\x08\x00";
 
-	public static $FRAME_TYPES = array (
+  public static $FRAME_TYPES = array (
   1 => 'FRAME-METHOD',
   2 => 'FRAME-HEADER',
   3 => 'FRAME-BODY',
@@ -20,7 +20,7 @@ class PhpAmqpLib_Wire_Constants080
   501 => 'FRAME-ERROR',
 );
 
-	public static $CONTENT_METHODS = array (
+  public static $CONTENT_METHODS = array (
   0 => '60,40',
   1 => '60,50',
   2 => '60,60',
@@ -35,12 +35,12 @@ class PhpAmqpLib_Wire_Constants080
   11 => '120,41',
 );
 
-	public static $CLOSE_METHODS = array (
+  public static $CLOSE_METHODS = array (
   0 => '10,60',
   1 => '20,40',
 );
 
-	public static $GLOBAL_METHOD_NAMES = array (
+  public static $GLOBAL_METHOD_NAMES = array (
   '10,10' => 'Connection.start',
   '10,11' => 'Connection.start_ok',
   '10,20' => 'Connection.secure',

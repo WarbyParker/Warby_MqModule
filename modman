@@ -1,5 +1,5 @@
 # Warby_Mqmodule
 
 code                        app/code/community/Warby/MqModule/
-Warby_Mqmodule.xml   		app/etc/modules/Warby_Mqmodule.xml
-lib							lib/PhpAmqpLib/
+Warby_Mqmodule.xml          app/etc/modules/Warby_Mqmodule.xml
+lib                         lib/PhpAmqpLib/

@@ -30,7 +30,7 @@ class PhpAmqpLib_Connection_AbstractConnection extends PhpAmqpLib_Channel_Abstra
                                 $locale="en_US",
                                 PhpAmqpLib_Wire_IO_AbstractIO $io)
     {
-    	// save the params for the use of __clone
+        // save the params for the use of __clone
         $this->construct_params = func_get_args();
 
         if ($user && $password) {
