@@ -14,7 +14,7 @@ class PhpAmqpLib_Connection_AMQPStreamConnection extends PhpAmqpLib_Connection_A
                                 $read_write_timeout = 3,
                                 $context = null)
     {
-    	$io = new PhpAmqpLib_Wire_IO_StreamIO($host, $port, $connection_timeout, $read_write_timeout, $context);
+        $io = new PhpAmqpLib_Wire_IO_StreamIO($host, $port, $connection_timeout, $read_write_timeout, $context);
         $this->sock = $io->get_socket();
 
         parent::__construct($user, $password, $vhost, $insist, $login_method, $login_response, $locale, $io);

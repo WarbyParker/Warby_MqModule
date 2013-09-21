@@ -1,4 +1,12 @@
 <?php
+/**
+ * @category Warby
+ * @package Warby_MqModule
+ * @author Warby Parker (Jarad Delorenzo, Jeff Uthaichai, Jesse Zlata, Karina Ruzinov) <oss@warbyparker.com>
+ * @copyright Massachusetts Institute of Technology License (MITL)
+ * @license  http://opensource.org/licenses/MIT
+ * Class Warby_Mqmodule_Model_Rabbitlistener
+ */
 
 //callback methods to process messages
 function process_message($msg) {
@@ -16,9 +24,9 @@ function shutdown($ch, $conn) {
 
 /**
   * This will listen to a queue that was defined in the admin panel then
-  * pass the messages to a processing class. 
+  * pass the messages to a processing class.
   *
-  * This class limits the amount of messages to process via the batch size 
+  * This class limits the amount of messages to process via the batch size
   * field. Once the batch size if met the channel and connection to rabbit
   * will close and the class will have to be called again to process the next batch.
   *
@@ -54,7 +62,7 @@ class Warby_Mqmodule_Model_Rabbitlistener {
 
             $ch->basic_cancel($consumer_tag);
 
-        }     
+        }
     }
 
     /**
