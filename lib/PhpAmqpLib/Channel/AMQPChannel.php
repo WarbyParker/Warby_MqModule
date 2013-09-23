@@ -7,12 +7,12 @@ class PhpAmqpLib_Channel_AMQPChannel extends PhpAmqpLib_Channel_AbstractChannel
     /**
      *
      * @var callable these parameters will be passed to function
-     * 		in case of basic_return:
-     * 	param int $reply_code
-     * 	param string $reply_text
-     * 	param string $exchange
-     * 	param string $routing_key
-     * 	param PhpAmqpLib_Message_AMQPMessage $msg
+     *      in case of basic_return:
+     *  param int $reply_code
+     *  param string $reply_text
+     *  param string $exchange
+     *  param string $routing_key
+     *  param PhpAmqpLib_Message_AMQPMessage $msg
      */
     protected $basic_return_callback = null;
 

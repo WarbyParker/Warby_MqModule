@@ -1,13 +1,20 @@
 <?php
-
+/**
+ * @category Warby
+ * @package Warby_MqModule
+ * @author Warby Parker (Jarad Delorenzo, Jeff Uthaichai, Jesse Zlata, Karina Ruzinov) <oss@warbyparker.com>
+ * @copyright Massachusetts Institute of Technology License (MITL)
+ * @license  http://opensource.org/licenses/MIT
+ * Class Warby_Mqmodule_Helper_Data
+ */
 class Warby_Mqmodule_Helper_Data extends Mage_Core_Helper_Abstract {
 
-	/**
-	 * Maps an order and its addresses, payment, and items
-	 * to a JSON string.
-	 *
-	 * @return string
-	 */
+    /**
+     * Maps an order and its addresses, payment, and items
+     * to a JSON string.
+     *
+     * @return string
+     */
     public function orderToJSON($order) {
         $items = array();
         foreach ($order->getItemsCollection() as $item) {
@@ -40,10 +47,10 @@ class Warby_Mqmodule_Helper_Data extends Mage_Core_Helper_Abstract {
 
     /**
      * Publish an order confirmation message to the queue.
-     * 
-     * @param $observer	Either a varien object or an event object, depending on where it's coming from
-     * @param $key		Routing key to where the message will be published	
-     * @param $type		Content type of the message
+     *
+     * @param $observer Either a varien object or an event object, depending on where it's coming from
+     * @param $key      Routing key to where the message will be published
+     * @param $type     Content type of the message
      */
     public function publishMessage($observer, $key, $type="application/json") {
 

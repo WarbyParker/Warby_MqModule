@@ -4,7 +4,7 @@
 
 class PhpAmqpLib_Helper_Protocol_MethodMap080
 {
-	protected $method_map = array (
+  protected $method_map = array (
   '10,10' => 'connection_start',
   '10,11' => 'connection_start_ok',
   '10,20' => 'connection_secure',
@@ -100,10 +100,10 @@ class PhpAmqpLib_Helper_Protocol_MethodMap080
   '120,41' => 'test_content_ok',
 );
 
-	public function get_method($method_sig) {
-		 return $this->method_map[$method_sig];
-	}
-	public function valid_method($method_sig) {
-		return array_key_exists($method_sig, $this->method_map);
-	}
+  public function get_method($method_sig) {
+     return $this->method_map[$method_sig];
+  }
+  public function valid_method($method_sig) {
+    return array_key_exists($method_sig, $this->method_map);
+  }
 }

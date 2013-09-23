@@ -56,7 +56,7 @@ abstract class PhpAmqpLib_Wire_GenericContent
      */
     public function get_properties()
     {
-   		return $this->properties;
+        return $this->properties;
     }
     /**
      * allows to set the property after creation of the object

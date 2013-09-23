@@ -4,7 +4,7 @@
 
 class PhpAmqpLib_Helper_Protocol_Wait080
 {
-	protected $wait = array (
+  protected $wait = array (
   'connection.start' => '10,10',
   'connection.start_ok' => '10,11',
   'connection.secure' => '10,20',
@@ -100,7 +100,7 @@ class PhpAmqpLib_Helper_Protocol_Wait080
   'test.content_ok' => '120,41',
 );
 
-	public function get_wait($method) {
-		 return $this->wait[$method];
-	}
+  public function get_wait($method) {
+     return $this->wait[$method];
+  }
 }
