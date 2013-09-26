@@ -75,9 +75,10 @@ class Warby_Mqmodule_Model_Rabbitlistener {
         $orders = Mage::getModel('sales/order')->getCollection()
             ->addAttributeToFilter('mqmodule_status', array('eq'=>0));
 
+        $key = Mage::getStoreConfig('mqmodule/mqmodule/salesroutingkey');
         if($orders instanceof Varien_Data_Collection) {
             foreach($orders as $i => $order) {
-                Mage::helper('mqmodule')->publishMessage($order, Warby_Mqmodule_Model_Order_Confirmation_Observer::KEY);
+                Mage::helper('mqmodule')->publishMessage($order, $key);
             }
         }
     }
