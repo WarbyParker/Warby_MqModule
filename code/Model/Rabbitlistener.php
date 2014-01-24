@@ -34,6 +34,10 @@ function shutdown($ch, $conn) {
 class Warby_Mqmodule_Model_Rabbitlistener {
     protected $conn, $ch, $batchsize;
 
+    /* 
+     * This function is currently not being used due to the fact that
+     * it continously creates queues
+     */
     public function listen() {
         //Configs from RabbitMQ Module
         extract(Mage::helper('mqmodule')->getConfigs());

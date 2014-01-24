@@ -38,14 +38,6 @@
     </global>
     <crontab>
         <jobs>
-            <mq_listener>
-                <schedule>
-                    <cron_expr>* * * * *</cron_expr>
-                </schedule>
-                <run>
-                    <model>mqmodule/rabbitlistener::listen</model>
-                </run>
-            </mq_listener>
             <mq_process_pending>
                 <schedule>
                     <cron_expr>*/5 * * * *</cron_expr>

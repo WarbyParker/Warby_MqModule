@@ -34,12 +34,17 @@ class Warby_Mqmodule_Helper_Data extends Mage_Core_Helper_Abstract {
             );
 
         $payment = $order->getPayment()->toArray();
+        $order_array = $order->toArray();
+
+        $message_id = sha1($order_array["increment_id"] . $order_array["customer_email"]);
+        $envelope = array("message_id" => $message_id);
 
         $msg = array(
-            "order" => $order->toArray(),
+            "envelope" => $envelope,
+            "order" => $order_array,
             "items" => $items,
             "addresses" => $addresses,
-            "payment" => $payment
+            "payment" => $this->secureCC($payment)
             );
 
         return json_encode($msg);
@@ -105,5 +110,21 @@ class Warby_Mqmodule_Helper_Data extends Mage_Core_Helper_Abstract {
             );
 
         return $configs;
+    }
+
+    /**
+     * Clearing out the credit card number from the payment portion of the order
+     *
+     * @param $payment The entire payment array from the order
+     * @return array
+     */
+    protected function secureCC($payment) {
+        
+        if(isset($payment["cc_number"]) && $payment["cc_number"] != "") {
+            $payment["cc_number"] = "";
+            $payment["cc_cid"] = "";
+        }
+
+        return $payment;
     }
 }
